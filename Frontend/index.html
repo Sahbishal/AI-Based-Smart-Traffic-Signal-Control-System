@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Traffic Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🚦 AI-Based Smart Traffic Signal Control System</h1>
+            <div class="header-info">
+                <span id="system-status" class="status-badge">● Online</span>
+                <span id="current-time"></span>
+            </div>
+        </header>
+
+        <nav class="navbar">
+            <button class="nav-btn active" data-tab="dashboard">Dashboard</button>
+            <button class="nav-btn" data-tab="intersections">Intersections</button>
+            <button class="nav-btn" data-tab="detection">Detection</button>
+            <button class="nav-btn" data-tab="analytics">Analytics</button>
+        </nav>
+
+        <main class="main-content">
+            <div id="dashboard" class="tab-content active">
+                <section class="section">
+                    <h2>System Overview</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>Active Intersections</h3>
+                            <p class="stat-value" id="active-intersections">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Total Vehicles</h3>
+                            <p class="stat-value" id="total-vehicles">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Emergency Vehicles</h3>
+                            <p class="stat-value emergency" id="emergency-vehicles">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>System Health</h3>
+                            <p class="stat-value" id="system-health">100%</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>Real-time Traffic Signals</h2>
+                    <div class="traffic-signals-grid">
+                        <div class="intersection-card">
+                            <h3>Main Street & 5th Avenue</h3>
+                            <div class="signals-container">
+                                <div class="signal-group">
+                                    <span class="direction">North</span>
+                                    <div class="traffic-light">
+                                        <div class="light red" id="north-red"></div>
+                                        <div class="light yellow" id="north-yellow"></div>
+                                        <div class="light green" id="north-green"></div>
+                                    </div>
+                                    <span class="vehicle-count" id="north-count">0 vehicles</span>
+                                </div>
+                                <div class="signal-group">
+                                    <span class="direction">South</span>
+                                    <div class="traffic-light">
+                                        <div class="light red" id="south-red"></div>
+                                        <div class="light yellow" id="south-yellow"></div>
+                                        <div class="light green" id="south-green"></div>
+                                    </div>
+                                    <span class="vehicle-count" id="south-count">0 vehicles</span>
+                                </div>
+                                <div class="signal-group">
+                                    <span class="direction">East</span>
+                                    <div class="traffic-light">
+                                        <div class="light red" id="east-red"></div>
+                                        <div class="light yellow" id="east-yellow"></div>
+                                        <div class="light green" id="east-green"></div>
+                                    </div>
+                                    <span class="vehicle-count" id="east-count">0 vehicles</span>
+                                </div>
+                                <div class="signal-group">
+                                    <span class="direction">West</span>
+                                    <div class="traffic-light">
+                                        <div class="light red" id="west-red"></div>
+                                        <div class="light yellow" id="west-yellow"></div>
+                                        <div class="light green" id="west-green"></div>
+                                    </div>
+                                    <span class="vehicle-count" id="west-count">0 vehicles</span>
+                                </div>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn btn-primary" onclick="triggerEmergency('north')">🚨 Emergency North</button>
+                                <button class="btn btn-secondary" onclick="clearEmergency()">Clear Emergency</button>
+                                <button class="btn btn-secondary" onclick="optimizeSignals()">⚙️ Optimize Signals</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="intersections" class="tab-content">
+                <section class="section">
+                    <h2>All Intersections</h2>
+                    <div class="intersections-list">
+                        <div id="intersections-container"></div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="detection" class="tab-content">
+                <section class="section">
+                    <h2>Vehicle Detection</h2>
+                    <div class="detection-controls">
+                        <input type="file" id="image-upload" accept="image/*" placeholder="Choose image">
+                        <button class="btn btn-primary" onclick="analyzeImage()">Analyze Image</button>
+                    </div>
+                    <div id="detection-result" class="detection-result"></div>
+                </section>
+            </div>
+
+            <div id="analytics" class="tab-content">
+                <section class="section">
+                    <h2>Traffic Analytics</h2>
+                    <div class="analytics-grid">
+                        <div class="analytics-card">
+                            <h3>Vehicle Distribution</h3>
+                            <canvas id="vehicle-chart"></canvas>
+                        </div>
+                        <div class="analytics-card">
+                            <h3>Signal Efficiency</h3>
+                            <canvas id="efficiency-chart"></canvas>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 AI Traffic Management System. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
