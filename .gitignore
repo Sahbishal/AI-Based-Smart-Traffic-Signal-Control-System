@@ -1,0 +1,113 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+.venv
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+traffic_system.log
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+traffic.db
+
+# Models & Data
+*.pt
+*.pth
+models/
+data/
+datasets/
+
+# Large files
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.jpg
+*.jpeg
+*.png
+!image1.png
+
+# OS
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Cache
+.cache/
+*.cache
+
+# Editor temporary files
+*.bak
+*.backup
+
+# PyCharm
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Node (if using webpack or similar)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Compiled files
+*.o
+*.out
+
+# Misc
+.RData
+.Rhistory
